@@ -1,0 +1,11 @@
+
+.field {
+    width: 125px;
+    height: 125px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 50px;
+    background-color:#7f7f7f;
+    border:0;
+}

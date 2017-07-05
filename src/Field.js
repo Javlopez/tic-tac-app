@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import ReactDOM from 'react-dom';
 import './Field.css';
 
 export default class Field extends Component {
@@ -12,10 +13,14 @@ export default class Field extends Component {
         if(e.target.textContent === "O" || e.target.textContent === "X") {
             return false;
         }
-        this.setState({player: "Y"});
+        this.setState({player: "X"});
+
+        let positions = ReactDOM.findDOMNode(this).parentElement.getElementsByClassName('field');
+
+        this.props.updateBoard(e, positions);
     }
 
     render() {
-        return (<button className="field" onClick={this.updateField}>{this.state.player}</button>);
+        return (<div className="field" ref="field" onClick={this.updateField}>{this.props.player}</div>);
     }
 }

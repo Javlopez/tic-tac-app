@@ -6,6 +6,12 @@
     justify-content: center;
     align-items: center;
     font-size: 50px;
-    background-color:#7f7f7f;
-    border:0;
+    color: #586069;
+    background-color: #f7f7f7;
+    border-radius: 0 0 2px 2px;
+    box-sizing: border-box;
+    padding: 2px 6px 3px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #BBBBBB;
 }

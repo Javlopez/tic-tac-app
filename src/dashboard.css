@@ -1,6 +1,7 @@
 .dashboard {
     display:flex;
     flex-wrap:wrap;
+    flex-direction: row-reverse;
     width:409px;
     height: 400px;
     margin:0 auto;

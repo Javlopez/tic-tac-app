@@ -40,7 +40,6 @@ export default class ModalScreen extends Component {
     render () {
         return (
             <div>
-                <button onClick={this.handleOpenModal}>Trigger Modal</button>
                 <ReactModal
                     isOpen={this.state.showModal}
                     onRequestClose={this.handleCloseModal}

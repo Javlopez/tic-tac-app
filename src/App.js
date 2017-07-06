@@ -39,31 +39,35 @@ class App extends Component {
     updateBoard = (e, positions) =>  {
         let currentBoardState = this.matrixState(e, positions);
 
-        fetch(API_SERVER_REST + '/api/movements', {
-            method: 'POST',
-            headers: {
+
+         fetch(API_SERVER_REST + '/api/movements', {
+             method: 'POST',
+             headers: {
                 'Content-Type': 'application/json',
                 'X-Player': this.state.player
-            },
-            body: JSON.stringify(currentBoardState)
-        })
-            .then((response) => {
-                return response.json();
-            })
-            .then((movements) => {
-                this.updateCurrentState(movements);
-            })
+             },
+             body: JSON.stringify(currentBoardState)
+         })
+         .then((response) => {
+            return response.json();
+         })
+         .then((movements) => {
+            this.updateCurrentState(movements);
+         })
     }
 
-    matrixState(e, positions) {
+    matrixState = (e, positions) => {
         let currentState = [];
         let rowItems = [];
+
+
         for(let i = 0; i < positions.length; i++) {
 
             let currentItem = positions[i];
             let player = currentItem.textContent;
 
             if (e.target === currentItem) {
+                e.target.textContent = this.state.player;
                 player = this.state.player;
             }
 
@@ -85,11 +89,7 @@ class App extends Component {
       <div className="App">
           <Header />
           <Dashboard matrix={this.state.matrix} updateBoard={this.updateBoard}/>
-
           <ModalScreen updatePlayer={this.updatePlayer}/>
-        <p className="App-intro">
-          Your turn
-        </p>
       </div>
     );
   }

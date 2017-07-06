@@ -8,11 +8,12 @@ const styles = {
     },
     content: {
         color: '#4a74cc',
-        top: 40,
-        width: '40%',
-        left: 50,
-        right: 50,
-        margin: '20%',
+        top: 5,
+        height:150,
+        width: '20%',
+        left: 10,
+        right: '30%',
+        margin: '10%',
         textAlign: 'center'
     },
 }
